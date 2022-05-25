@@ -29,7 +29,7 @@ public class shoppingStepDef {
 		
 	}
 
-	@When("User search the product with shortname {string}")
+	@When("^User search the product with shortname (.+)$")
 	public void user_search_the_product_with(String shortname) throws InterruptedException {
 		shoppingpage.searchItem(shortname);;
 		System.out.print(shortname);

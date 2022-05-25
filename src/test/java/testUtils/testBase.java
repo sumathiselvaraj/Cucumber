@@ -18,9 +18,10 @@ public class testBase {
 		{
 			WebDriverManager.chromedriver().setup();
 		 driver = new ChromeDriver();
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+			driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 		}
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		
 
 		return driver;
 	}

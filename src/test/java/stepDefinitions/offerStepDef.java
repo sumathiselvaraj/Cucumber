@@ -32,7 +32,7 @@ public class offerStepDef {
 
 	@When("^User search the product with (.+) in deals$")
 	public void user_search_the_product_with_in_deals(String shortname) throws InterruptedException {
-		switchToOffersPage();
+		testsetup.genericUtils.windowHandle();
 		offerpage.searchItem(shortname);;
 		System.out.print(shortname); 
 		Thread.sleep(1000);
@@ -42,6 +42,7 @@ public class offerStepDef {
 	public void switchToOffersPage()
 	{
 		//if switched to offer page-> skip below part
+		
 		shoppingPage landingPage  =testsetup.pagemanager.getShoppingPage();
 		landingPage.selectTopDealsPage();
 		testsetup.genericUtils.windowHandle();
@@ -52,7 +53,7 @@ public class offerStepDef {
 	@Then("User check if the product exists")
 	public void user_check_if_the_product_exists() {
 
-		Assert.assertEquals(dealProduct, testsetup.productName);
+		Assert.assertEquals(testsetup.dealProduct, testsetup.productName);;
 	}
 
 }

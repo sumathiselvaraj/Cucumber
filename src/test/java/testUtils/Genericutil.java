@@ -9,6 +9,7 @@ public class Genericutil {
 
 	WebDriver driver;
 	testSetUp testsetup;
+	String parentWindow;
 
 	public Genericutil(WebDriver driver) {
 
@@ -19,7 +20,7 @@ public class Genericutil {
 		
 		Set<String> s1 = driver.getWindowHandles();
 		Iterator<String> i1 = s1.iterator();
-		String parentWindow = i1.next();
+		parentWindow = i1.next();
 		String childWindow = i1.next();
 		driver.switchTo().window(childWindow);
 		

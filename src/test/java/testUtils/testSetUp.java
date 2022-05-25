@@ -11,6 +11,7 @@ public class testSetUp {
 	public String productName;
 	public String originalName = "Tomato";
 	public String dealProduct;
+	public String parentWindow;
 	
 	public testBase base;
 	public pageManager pagemanager ;
