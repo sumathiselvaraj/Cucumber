@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import testUtils.testBase;
 
-public class offerPage extends testBase{
+public class OfferPage extends testBase{
 	
 	public WebDriver driver;
 
-	public offerPage(WebDriver driver)
+	public OfferPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver,this);
 		

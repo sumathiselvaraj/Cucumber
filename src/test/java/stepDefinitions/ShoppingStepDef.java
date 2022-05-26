@@ -2,39 +2,39 @@ package stepDefinitions;
 
 import org.testng.Assert;
 
-import Pages.shoppingPage;
+import Pages.ShoppingPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import testUtils.testSetUp;
+import testUtils.TestSetUp;
 
 
-public class shoppingStepDef {
+public class ShoppingStepDef {
 	
-	testSetUp testsetup;
-	shoppingPage shoppingpage;
+	TestSetUp testsetup;
+	ShoppingPage shopPg;
 	public String productName;
 	
-	public shoppingStepDef(testSetUp testsetup)
+	public ShoppingStepDef(TestSetUp testsetup)
 	{
 		this.testsetup = testsetup ;
-		this.shoppingpage = testsetup.pagemanager.getShoppingPage();
+		this.shopPg = testsetup.pgMngr.getShoppingPage();
 		
 	}
 	
 	@Given("User lands in Green Cart Home Page")
 	public void user_lands_in_green_cart_home_page() {
 		
-		Assert.assertTrue(shoppingpage.getTitleLandingPage().contains("Green"));
+		Assert.assertTrue(shopPg.getTitleLandingPage().contains("Green"));
 		
 	}
 
 	@When("^User search the product with shortname (.+)$")
 	public void user_search_the_product_with(String shortname) throws InterruptedException {
-		shoppingpage.searchItem(shortname);;
+		shopPg.searchItem(shortname);;
 		System.out.print(shortname);
 		Thread.sleep(1000);
-		testsetup.productName = shoppingpage.getProductName().split("-")[0].trim();
+		testsetup.productName = shopPg.getProductName().split("-")[0].trim();
 		System.out.print(testsetup.productName);
 	}
 
@@ -47,13 +47,13 @@ public class shoppingStepDef {
 	
 	@When("User click Top deal link")
 	public void user_click_top_deal_link() {
-			shoppingpage.selectTopDealsPage();
+			shopPg.selectTopDealsPage();
 	}
 	@Then("User lands on offer page")
 	public void user_lands_on_offer_page() throws InterruptedException {
 		
 		Thread.sleep(1000);
-		testsetup.offerPageTitle = shoppingpage.getTitleLandingPage();
+		testsetup.offerPageTitle = shopPg.getTitleLandingPage();
 		Assert.assertTrue(testsetup.offerPageTitle.contains("Green"));
 	}
 	

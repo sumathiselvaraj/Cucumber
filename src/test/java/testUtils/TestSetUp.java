@@ -2,10 +2,10 @@ package testUtils;
 
 import org.openqa.selenium.WebDriver;
 
-import Pages.pageManager;
+import Pages.PageManager;
 
 
-public class testSetUp {
+public class TestSetUp {
 
 	public WebDriver driver;
 	public String productName;
@@ -14,16 +14,16 @@ public class testSetUp {
 	public String parentWindow;
 	
 	public testBase base;
-	public pageManager pagemanager ;
+	public PageManager pgMngr ;
 	public String offerPageTitle;
-	public Genericutil genericUtils;
+	public Genericutil gUtil;
 
-	public testSetUp()
+	public TestSetUp()
 
 	{
 		base = new testBase();
-        pagemanager = new pageManager(base.initialization());
-        genericUtils = new Genericutil(base.initialization()); 	
+        pgMngr = new PageManager(base.initialization());
+        gUtil = new Genericutil(base.initialization()); 	
 	}
 
 }
