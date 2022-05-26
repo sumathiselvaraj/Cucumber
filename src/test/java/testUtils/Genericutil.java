@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class Genericutil {
 
 	WebDriver driver;
-	testSetUp testsetup;
+	TestSetUp testSp;
 	String parentWindow;
 
 	public Genericutil(WebDriver driver) {

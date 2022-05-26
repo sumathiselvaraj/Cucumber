@@ -2,25 +2,24 @@ package stepDefinitions;
 
 import org.testng.Assert;
 
-import Pages.offerPage;
-import Pages.shoppingPage;
-import io.cucumber.java.en.Given;
+import Pages.OfferPage;
+import Pages.ShoppingPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import testUtils.testSetUp;
+import testUtils.TestSetUp;
 
-public class offerStepDef {
+public class OfferStepDef {
 
-	testSetUp testsetup;
-	offerPage offerpage;
-	shoppingPage shoppingpage;
+	TestSetUp testsetup;
+	OfferPage dealPg;
+	ShoppingPage shopPg;
 	String dealProduct;
 
-	public offerStepDef(testSetUp testsetup) {
+	public OfferStepDef(TestSetUp testsetup) {
 
 		this.testsetup = testsetup;
-		this.offerpage = testsetup.pagemanager.getOfferPage();
-		this.shoppingpage = testsetup.pagemanager.getShoppingPage();
+		this.dealPg = testsetup.pgMngr.getOfferPage();
+		this.shopPg = testsetup.pgMngr.getShoppingPage();
 		
 	}
 
@@ -32,20 +31,20 @@ public class offerStepDef {
 
 	@When("^User search the product with (.+) in deals$")
 	public void user_search_the_product_with_in_deals(String shortname) throws InterruptedException {
-		testsetup.genericUtils.windowHandle();
-		offerpage.searchItem(shortname);;
+		testsetup.gUtil.windowHandle();
+		dealPg.searchItem(shortname);;
 		System.out.print(shortname); 
 		Thread.sleep(1000);
-		dealProduct = offerpage.getProductName();
+		dealProduct = dealPg.getProductName();
 	}
 	
 	public void switchToOffersPage()
 	{
 		//if switched to offer page-> skip below part
 		
-		shoppingPage landingPage  =testsetup.pagemanager.getShoppingPage();
+		ShoppingPage landingPage  =testsetup.pgMngr.getShoppingPage();
 		landingPage.selectTopDealsPage();
-		testsetup.genericUtils.windowHandle();
+		testsetup.gUtil.windowHandle();
 		//explicit wait, parse string
 			
 	}
