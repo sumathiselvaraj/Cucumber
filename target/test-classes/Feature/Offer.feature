@@ -9,7 +9,7 @@ Scenario Outline: Verify product in offerpage
 
 	Given User lands on offer page
 	When User search the product with <Name> in deals 
-	Then User check if the product exists 
+	Then User check if the product exists <Name>
 	
 	Examples: 
 		| Name |
