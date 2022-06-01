@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +16,7 @@ public class ShoppingPage {
 	By topDeals = By.linkText("Top Deals");
 	By increment=   By.cssSelector("a.increment");
 	By addToCart = By.cssSelector(".product-action button");
+	
 
 	
 	
@@ -46,6 +47,7 @@ public class ShoppingPage {
 	{
 		driver.findElement(addToCart).click();
 	}
+	
 	
 	public String getProductName()
 	{

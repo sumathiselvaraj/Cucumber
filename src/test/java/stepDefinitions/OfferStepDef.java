@@ -2,10 +2,10 @@ package stepDefinitions;
 
 import org.testng.Assert;
 
-import Pages.OfferPage;
-import Pages.ShoppingPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.OfferPage;
+import pages.ShoppingPage;
 import testUtils.TestSetUp;
 
 public class OfferStepDef {
@@ -13,7 +13,7 @@ public class OfferStepDef {
 	TestSetUp testsetup;
 	OfferPage dealPg;
 	ShoppingPage shopPg;
-	String dealProduct;
+	public String dealProduct;
 
 	public OfferStepDef(TestSetUp testsetup) {
 
@@ -35,7 +35,19 @@ public class OfferStepDef {
 		dealPg.searchItem(shortname);;
 		System.out.print(shortname); 
 		Thread.sleep(1000);
-		dealProduct = dealPg.getProductName();
+		dealProduct = dealPg.getProductName().split("-")[0].trim();
+		
+		if(shortname.equals("Tom"))
+		{
+			System.out.print("Tomato :" + dealProduct);
+			
+		}
+		
+		else
+		{
+			System.out.print("Beetroot :" + dealProduct);
+			
+		}
 	}
 	
 	public void switchToOffersPage()
@@ -49,10 +61,12 @@ public class OfferStepDef {
 			
 	}
 
-	@Then("User check if the product exists")
-	public void user_check_if_the_product_exists() {
+	@Then("^User check if the product exists (.+)$")
+	public void user_check_if_the_product_exists(String shortname) {
 
-		Assert.assertEquals(testsetup.dealProduct, testsetup.productName);;
+
+		Assert.assertEquals(dealProduct,testsetup.productName);
+		
 	}
 
 }

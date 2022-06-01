@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +19,7 @@ public class OfferPage extends testBase{
 
 	
 	@FindBy(id = "search-field")   WebElement search;
-	@FindBy(xpath  = "//td[1]")  WebElement productName;
+	@FindBy(css  = "tr td:nth-child(1)")  WebElement productName;
 	@FindBy(xpath = "//*[contains(text(),'Top Deals')]")   WebElement topDeals;
 	@FindBy(css = "a.increment") WebElement increment;
 	@FindBy(css = ".product-action button")   WebElement addToCart;

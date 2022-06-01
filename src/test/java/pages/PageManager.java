@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 
@@ -9,8 +9,9 @@ import testUtils.Genericutil;
 public class PageManager {
 	
 	public WebDriver driver;
-	public ShoppingPage shoppingpage;
+	public ShoppingPage shopPg;
 	public OfferPage offerpage;
+	public CheckoutPage checkoutPg;
 	Genericutil genericutils;
 	
 	public PageManager(WebDriver driver)
@@ -23,9 +24,9 @@ public class PageManager {
 	public ShoppingPage getShoppingPage()
 	
 	{
-		shoppingpage = new ShoppingPage(driver);
+		shopPg = new ShoppingPage(driver);
 		
-		return shoppingpage;
+		return shopPg;
 	}
 	
 	public OfferPage getOfferPage()
@@ -35,5 +36,12 @@ public class PageManager {
 		return offerpage;
 	}
 	
+	public CheckoutPage getCheckoutPage()
+	
+	{
+		checkoutPg = new CheckoutPage(driver);
+		
+		return checkoutPg;
+	}
 
 }
