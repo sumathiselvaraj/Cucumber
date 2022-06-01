@@ -16,6 +16,7 @@ import testUtils.TestSetUp;
 public class Hooks {
 
 	TestSetUp testsetup;
+	WebDriver driver;
 	public Hooks(TestSetUp testsetup) 
 	{
 
@@ -23,7 +24,7 @@ public class Hooks {
 	}
 	
 	@After
-	public void AfterScenario() 
+	public void AfterScenario() throws IOException 
 	{
 		
 		testsetup.base.initialization().quit();
@@ -34,7 +35,7 @@ public class Hooks {
 	@AfterStep
 	public void AddScreenshot(Scenario scenario) throws IOException 
 	{
-		WebDriver driver =testsetup.base.initialization();
+		driver = testsetup.base.initialization();
 		if(scenario.isFailed())
 		{
 		//screenshot

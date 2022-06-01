@@ -1,5 +1,7 @@
 package testUtils;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,7 +26,7 @@ public class TestSetUp {
 	public String currentUrl;
 	public String url = "https://rahulshettyacademy.com/seleniumPractise/#/cart";
 
-	public TestSetUp()
+	public TestSetUp() throws IOException
 
 	{
 		base = new testBase();
