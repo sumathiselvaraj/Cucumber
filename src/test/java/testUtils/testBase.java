@@ -21,7 +21,8 @@ public class testBase {
 	public WebDriver initialization () throws IOException
 
 	{
-
+		if(driver == null)
+		{
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resource2\\config.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
@@ -33,8 +34,7 @@ public class testBase {
 		
 		browser = browser_maven!=null ? browser_maven : browser_properties;
 		
-		if(driver == null)
-		{
+		
 			WebDriverManager.chromedriver().setup();
 		 driver = new ChromeDriver();
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));

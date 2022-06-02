@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import testUtils.TestSetUp;
-
 public class CheckoutPage {
 	
 	@FindBy(xpath = "//button[@type = 'button']") WebElement checkOutButton;
@@ -17,7 +15,7 @@ public class CheckoutPage {
 	@FindBy(css = ".product-action button") WebElement addToCart;
 	
 	public WebDriver driver;
-	TestSetUp testsetup;
+	//TestSetUp testsetup;
 	
 	public CheckoutPage(WebDriver driver)
 	{
