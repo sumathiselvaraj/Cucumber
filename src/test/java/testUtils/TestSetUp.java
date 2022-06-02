@@ -14,8 +14,8 @@ public class TestSetUp {
 
 	public WebDriver driver;
 	public String productName;
-	public String originalName = "Tomato";
-	public String originalName1 = "Beetroot";
+	public String originalName ;
+	public ExcelReader reader;
 	public String dealProduct;
 	public String parentWindow;
 	public Integer int1;
@@ -24,7 +24,7 @@ public class TestSetUp {
 	public String offerPageTitle;
 	public Genericutil gUtil;
 	public String currentUrl;
-	public String url = "https://rahulshettyacademy.com/seleniumPractise/#/cart";
+	public String filePath = "\\src\\test\\resource2\\SampleExcel.xlsx";
 
 	public TestSetUp() throws IOException
 
@@ -32,6 +32,7 @@ public class TestSetUp {
 		base = new testBase();
         pgMngr = new PageManager(base.initialization());
         gUtil = new Genericutil(base.initialization()); 	
+         reader = new ExcelReader();
 	}
 
 }
