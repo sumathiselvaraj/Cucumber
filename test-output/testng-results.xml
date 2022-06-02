@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-02T13:58:26 MST" name="Default suite" finished-at="2022-06-02T13:59:23 MST" duration-ms="56823">
+  <suite started-at="2022-06-02T15:03:15 MST" name="Default suite" finished-at="2022-06-02T15:04:08 MST" duration-ms="52900">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-06-02T13:58:26 MST" name="Default test" finished-at="2022-06-02T13:59:23 MST" duration-ms="56823">
+    <test started-at="2022-06-02T15:03:15 MST" name="Default test" finished-at="2022-06-02T15:04:08 MST" duration-ms="52900">
       <class name="testRunner.TestNGTestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T13:58:27 MST" name="setUpClass" finished-at="2022-06-02T13:58:33 MST" duration-ms="6062" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T15:03:15 MST" name="setUpClass" finished-at="2022-06-02T15:03:16 MST" duration-ms="914" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@33e01298]]>
+                <![CDATA[org.testng.TestRunner@3005623b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T13:58:34 MST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-06-02T13:59:23 MST" duration-ms="49172" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T15:03:16 MST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-06-02T15:03:33 MST" duration-ms="17389" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -34,26 +34,76 @@
               </value>
             </param>
           </params>
+          <exception class="java.io.FileNotFoundException">
+            <message>
+              <![CDATA[C:\Users\einst\eclipse-workspace-new\Cucumber\src\test\resource2\SampleExcel.xlsx]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.FileNotFoundException: C:\Users\einst\eclipse-workspace-new\Cucumber\src\test\resource2\SampleExcel.xlsx
+at org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:317)
+at org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:295)
+at org.apache.poi.ss.usermodel.WorkbookFactory.create(WorkbookFactory.java:276)
+at testUtils.ExcelReader.getWorkBook(ExcelReader.java:45)
+at testUtils.ExcelReader.getSheetByName(ExcelReader.java:35)
+at testUtils.ExcelReader.getData(ExcelReader.java:24)
+at stepDefinitions.ShoppingStepDef.user_search_the_product_from_and_rownumber(ShoppingStepDef.java:44)
+at ✽.User search the product from "product" and rownumber 0(file:///C:/Users/einst/eclipse-workspace-new/Cucumber/src/test/java/Feature/01Shopping.feature:7)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.io.FileNotFoundException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T13:58:34 MST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-06-02T13:59:23 MST" duration-ms="48853" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T15:03:33 MST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-06-02T15:03:52 MST" duration-ms="18422" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User verify product in landing page"]]>
+                <![CDATA["Verify product in offerpage"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verifying and Selecting Product"]]>
+                <![CDATA["Verifying Product in OfferPage"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [null] but found [Tomato]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [null] but found [Tomato]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at org.testng.Assert.assertEquals(Assert.java:665)
+at stepDefinitions.OfferStepDef.user_check_if_the_product_exists(OfferStepDef.java:70)
+at ✽.User check if the product exists Tom(file:///C:/Users/einst/eclipse-workspace-new/Cucumber/src/test/java/Feature/02Offer.feature:12)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T15:03:52 MST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-06-02T15:04:07 MST" duration-ms="15255" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User increments his product quantity"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Placing Order"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T13:59:23 MST" name="tearDownClass" finished-at="2022-06-02T13:59:23 MST" duration-ms="26" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestNGTestRunner@173ed316]" started-at="2022-06-02T15:04:07 MST" name="tearDownClass" finished-at="2022-06-02T15:04:08 MST" duration-ms="865" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

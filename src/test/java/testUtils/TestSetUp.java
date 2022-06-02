@@ -16,7 +16,7 @@ public class TestSetUp {
 	public String productName;
 	public String originalName ;
 	public ExcelReader reader;
-	public String dealProduct;
+	//public String dealProduct;
 	public String parentWindow;
 	public Integer int1;
 	public testBase base;

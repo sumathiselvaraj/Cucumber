@@ -70,7 +70,6 @@
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.5.1</version>
-			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>

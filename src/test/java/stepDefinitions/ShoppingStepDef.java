@@ -46,7 +46,7 @@ public class ShoppingStepDef {
 		shortName = data.get(RowNumber).get("shortName");
 		testsetup.originalName = data.get(RowNumber).get("originalName");
 		shopPg.searchItem(shortName);
-		System.out.println(shortName);
+		//System.out.println(shortName);
 		Thread.sleep(500);
 		testsetup.productName = shopPg.getProductName().split("-")[0].trim();
 		System.out.println("testsetup.productname :" + testsetup.productName);
@@ -63,7 +63,7 @@ public class ShoppingStepDef {
 	public void user_search_the_product_with_shortname(String shortName) throws InterruptedException {
 		shopPg.searchItem(shortName);
 		Thread.sleep(500);
-		testsetup.productName = shopPg.getProductName().split("-")[0].trim();
+		//testsetup.productName = shopPg.getProductName().split("-")[0].trim();
 	}
 
 	@When("User click Top deal link")

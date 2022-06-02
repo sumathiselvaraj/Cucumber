@@ -14,7 +14,6 @@ Scenario Outline: Verify product in offerpage
 	Examples: 
 		| Name |
 		| Tom  |
-		| Beet |
 	
 		
 		

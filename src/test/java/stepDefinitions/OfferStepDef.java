@@ -33,21 +33,22 @@ public class OfferStepDef {
 	public void user_search_the_product_with_in_deals(String shortname) throws InterruptedException {
 		testsetup.gUtil.windowHandle();
 		dealPg.searchItem(shortname);;
-		System.out.print(shortname); 
+		//System.out.print(shortname); 
 		Thread.sleep(1000);
 		dealProduct = dealPg.getProductName().split("-")[0].trim();
+		System.out.println(dealProduct);
 		
-		if(shortname.equals("Tom"))
-		{
-			System.out.print("Tomato :" + dealProduct);
-			
-		}
-		
-		else
-		{
-			System.out.print("Beetroot :" + dealProduct);
-			
-		}
+//		if(shortname.equals("Tom"))
+//		{
+//			System.out.print("Tomato :" + dealProduct);
+//			
+//		}
+//		
+//		else
+//		{
+//			System.out.print("Beetroot :" + dealProduct);
+//			
+//		}
 	}
 	
 	public void switchToOffersPage()
@@ -64,7 +65,8 @@ public class OfferStepDef {
 	@Then("^User check if the product exists (.+)$")
 	public void user_check_if_the_product_exists(String shortname) {
 
-
+		System.out.println(testsetup.productName+"-->testsetup.productName");
+		System.out.println(dealProduct+"-->dealProduct");
 		Assert.assertEquals(dealProduct,testsetup.productName);
 		
 	}

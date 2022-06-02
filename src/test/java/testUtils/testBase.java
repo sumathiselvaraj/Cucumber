@@ -23,7 +23,7 @@ public class testBase {
 	{
 		if(driver == null)
 		{
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resource2\\config.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
 		String url = prop.getProperty("Url");

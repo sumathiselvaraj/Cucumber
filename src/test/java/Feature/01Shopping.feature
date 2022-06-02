@@ -10,6 +10,6 @@ Scenario Outline: User verify product in landing page
 	Examples: 
 		| SheetName  | RowNumber |
 		| product	 |   0       |
-		| product    |   1       |
+		
 		
 		
