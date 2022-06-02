@@ -4,12 +4,12 @@ Feature: Verifying and Selecting Product
 Scenario Outline: User verify product in landing page 
 
 	Given User lands in Green Cart Home Page 
-	When User search the product with shortname <Name> 
+	When User search the product from "<SheetName>" and rownumber <RowNumber> 
 	Then User exctract the actual name of the product 
 	
 	Examples: 
-		| Name  |
-		| Tom 	|
-		| Beet  |
+		| SheetName  | RowNumber |
+		| product	 |   0       |
+		| product    |   1       |
 		
 		

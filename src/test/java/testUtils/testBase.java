@@ -1,7 +1,6 @@
 package testUtils;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -16,20 +15,23 @@ public class testBase {
 
 	public WebDriver driver;
 	public  WebDriverWait wait ;
+	String browser;
+	public String filePath;
 
 	public WebDriver initialization () throws IOException
 
 	{
 
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resource\\config.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resource2\\config.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
 		String url = prop.getProperty("Url");
 		String browser_properties = prop.getProperty("browser");
 		String browser_maven=System.getProperty("browser");
+		filePath = prop.getProperty("filepath");
 		// result = testCondition ? value1 : value2
 		
-		String browser = browser_maven!=null ? browser_maven : browser_properties;
+		browser = browser_maven!=null ? browser_maven : browser_properties;
 		
 		if(driver == null)
 		{

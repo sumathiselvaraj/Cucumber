@@ -22,9 +22,9 @@ public class ShoppingPage {
 	
 	//5-6
 	
-	public void searchItem(String name)
+	public void searchItem(String shortName)
 	{
-		driver.findElement(search).sendKeys(name);
+		driver.findElement(search).sendKeys(shortName);
 	}
 	
 	public void getSearchText()
