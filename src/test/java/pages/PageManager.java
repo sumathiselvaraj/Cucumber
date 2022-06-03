@@ -9,7 +9,7 @@ import testUtils.Genericutil;
 public class PageManager {
 	
 	public WebDriver driver;
-	public ShoppingPage shopPg;
+	public LandingPage shopPg;
 	public OfferPage offerpage;
 	public CheckoutPage checkoutPg;
 	Genericutil genericutils;
@@ -21,10 +21,10 @@ public class PageManager {
 	}
 	
 	
-	public ShoppingPage getShoppingPage()
+	public LandingPage getShoppingPage()
 	
 	{
-		shopPg = new ShoppingPage(driver);
+		shopPg = new LandingPage(driver);
 		
 		return shopPg;
 	}

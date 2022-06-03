@@ -14,7 +14,8 @@ public class TestSetUp {
 
 	public WebDriver driver;
 	public String productName;
-	public String originalName ;
+	public String productName1;
+	public String originalName;
 	public ExcelReader reader;
 	public String dealProduct;
 	public String parentWindow;
@@ -24,7 +25,7 @@ public class TestSetUp {
 	public String offerPageTitle;
 	public Genericutil gUtil;
 	public String currentUrl;
-	public String filePath = "\\src\\test\\resource2\\SampleExcel.xlsx";
+	public String filePath = "\\src\\test\\resources\\SampleExcel.xlsx";
 
 	public TestSetUp() throws IOException
 

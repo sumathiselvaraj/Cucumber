@@ -3,10 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ShoppingPage {
+public class LandingPage {
 	public WebDriver driver;
 
-	public ShoppingPage(WebDriver driver)
+	public LandingPage(WebDriver driver)
 	{
 		this.driver = driver;
 		

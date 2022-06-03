@@ -5,14 +5,14 @@ import org.testng.Assert;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.OfferPage;
-import pages.ShoppingPage;
+import pages.LandingPage;
 import testUtils.TestSetUp;
 
 public class OfferStepDef {
 
 	TestSetUp testsetup;
 	OfferPage dealPg;
-	ShoppingPage shopPg;
+	LandingPage shopPg;
 	public String dealProduct;
 
 	public OfferStepDef(TestSetUp testsetup) {
@@ -54,7 +54,7 @@ public class OfferStepDef {
 	{
 		//if switched to offer page-> skip below part
 		
-		ShoppingPage landingPage  =testsetup.pgMngr.getShoppingPage();
+		LandingPage landingPage  =testsetup.pgMngr.getShoppingPage();
 		landingPage.selectTopDealsPage();
 		testsetup.gUtil.windowHandle();
 		//explicit wait, parse string
@@ -64,7 +64,7 @@ public class OfferStepDef {
 	@Then("^User check if the product exists (.+)$")
 	public void user_check_if_the_product_exists(String shortname) {
 
-
+        System.out.println("step 1 :" + testsetup.dealProduct);
 		Assert.assertEquals(dealProduct,testsetup.productName);
 		
 	}

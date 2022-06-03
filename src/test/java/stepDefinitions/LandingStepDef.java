@@ -9,19 +9,20 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.CheckoutPage;
-import pages.ShoppingPage;
+import pages.LandingPage;
 import testUtils.TestSetUp;
 
-public class ShoppingStepDef {
+public class LandingStepDef {
 
 	TestSetUp testsetup;
-	ShoppingPage shopPg;
+	LandingPage shopPg;
 	Integer int1;
 	CheckoutPage checkoutPg;
+	public String productName;
 
 	public String shortName;
 
-	public ShoppingStepDef(TestSetUp testsetup) {
+	public LandingStepDef(TestSetUp testsetup) {
 		this.testsetup = testsetup;
 		this.shopPg = testsetup.pgMngr.getShoppingPage();
 		this.checkoutPg = testsetup.pgMngr.getCheckoutPage();
@@ -62,8 +63,8 @@ public class ShoppingStepDef {
 	@When("User search the product with shortname {string}")
 	public void user_search_the_product_with_shortname(String shortName) throws InterruptedException {
 		shopPg.searchItem(shortName);
-		Thread.sleep(500);
-		testsetup.productName = shopPg.getProductName().split("-")[0].trim();
+		Thread.sleep(1000);
+		//testsetup.productName1 = shopPg.getProductName().split("-")[0].trim();
 	}
 
 	@When("User click Top deal link")
@@ -79,8 +80,8 @@ public class ShoppingStepDef {
 		Assert.assertTrue(testsetup.offerPageTitle.contains("Green"));
 	}
 
-	@When("User increments his product quantity to {int} and proceed to checkout")
-	public void user_increments_his_product_quantity_to_and_proceed_to_checkout(Integer int1) {
+	@When("User found the actual product then increments his product quantity to {int} and proceed to checkout")
+	public void user_found_the_actual_product_then_increments_his_product_quantity_to_and_proceed_to_checkout(Integer int1) {
 		shopPg.incrementQuantity(int1);
 		checkoutPg.checkOut();
 
